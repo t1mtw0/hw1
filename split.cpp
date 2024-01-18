@@ -26,7 +26,7 @@ void split(Node *&in, Node *&odds, Node *&evens) {
         in = in->next;
         split(in, odds, evens);
     } else {
-        if (odds = nullptr) {
+        if (odds == nullptr) {
             odds = in;
         } else {
             odds->next = in;
