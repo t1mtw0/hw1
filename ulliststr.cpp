@@ -76,7 +76,8 @@ void ULListStr::push_front(const std::string &val) {
 }
 
 void ULListStr::pop_front() {
-    if (empty()) return;
+    if (empty())
+        return;
     head_->first++;
     if (head_->first == head_->last) {
         if (head_->next == NULL) {
@@ -92,12 +93,14 @@ void ULListStr::pop_front() {
 }
 
 std::string const &ULListStr::back() const {
-    if (empty()) return NULL;
+    if (empty())
+        return NULL;
     return tail_->val[tail_->last - 1];
 }
 
 std::string const &ULListStr::front() const {
-    if (empty()) return NULL;
+    if (empty())
+        return NULL;
     return head_->val[head_->first];
 }
 
@@ -136,11 +139,13 @@ void ULListStr::clear() {
 }
 
 std::string *ULListStr::getValAtLoc(size_t loc) const {
-    if (empty()) return NULL;
-    if (loc >= size_) return NULL;
+    if (empty())
+        return NULL;
+    if (loc >= size_)
+        return NULL;
     Item *current = head_;
     size_t cur_loc = head_->first;
-    for (int i = 0; i < loc; ++i) {
+    for (size_t i = 0; i < loc; ++i) {
         if (cur_loc == current->last - 1) {
             cur_loc = -1;
             current = current->next;
